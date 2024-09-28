@@ -1,4 +1,958 @@
-//--------------- 26. Spread oprator  --------------------------------------------------------------
+//--------------- 50. Dates --------------------------------------------------------------
+
+const date = new Date();
+const date1 = new Date("2023-12-31");
+const date2 = new Date("2024-01-01");
+
+if(date2 > date1){
+    console.log("HAPPY NEW YEAR");
+}
+
+
+date.setFullYear(2024);
+date.setMonth(0);
+date.setDate(1);
+date.setHours(4);
+date.setMinutes(3);
+date.setSeconds(4);
+
+console.log(date);
+
+
+// const date = new Date();
+// const year = date.getFullYear();
+// const month = date.getMonth();
+// const day = date.getDate();
+// const hour = date.getHours();
+// const min = date.getMinutes();
+// const seconds = date.getSeconds();
+// const dayOfWeek = date.getDay();
+
+// console.log(year);
+// console.log(month);
+// console.log(day);
+// console.log(min);
+// console.log(seconds);
+// console.log(dayOfWeek);
+
+//--------------- 49. Shuffle an array --------------------------------------------------------------
+// const card = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K' ];
+
+// shuffle(card);
+// console.log(card);
+
+// function shuffle(array){
+//     for(let i = array.length - 1; i > 0; i-- ){
+//         const random = Math.floor(Math.random() * (i+1));
+//         [array[i],array[random]] = [array[random],array[i]]; 
+//     }
+// }
+
+//--------------- 48. Sorting  --------------------------------------------------------------
+
+// const pepole = [
+//     {name : "Sagar",age : 24, gpa : 3.0},
+//     {name : "Bhavik",age : 25, gpa : 4.0},
+//     {name : "Vrushabh",age : 26, gpa : 5.0},
+//     {name : "morgan",age : 24, gpa : 3.0}
+// ];
+
+// pepole.sort((a,b) => a.name.localeCompare(b.name));
+// pepole.sort((a,b) => a.gpa - b.gpa);
+
+// console.log(pepole);
+
+// let number = [1, 10, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// number.sort((a,b) => a - b);
+
+// console.log(number);
+
+//--------------- 47. Array of object  --------------------------------------------------------------
+
+// const fruit = [
+//     {
+//        name : "apple",
+//        color : "red",
+//        calories : 95 
+//     },{
+//         name : "banana",
+//         color : "yellow",
+//         calories : 45
+//     },{
+//         name : "coconut",
+//         color : "white",
+//         calories : 95
+//     },{
+//         name : "orange",
+//         color : "orange",
+//         calories : 105
+//     },{
+//         name : "pinaple",
+//         color : "yellow",
+//         calories : 37
+//     }
+// ];
+
+// const maxFruit = fruit.reduce((max,fruit) => fruit.calories > max.calories  ? fruit  : max);
+// const minFruit = fruit.reduce((min,fruit) => fruit.calories < min.calories  ? fruit  : min);
+// console.log(maxFruit);
+// console.log(minFruit);
+
+
+// const yellowFruit = fruit.filter(fruit => fruit.color === "yellow");
+// const lessCalorieFruit = fruit.filter(fruit => fruit.calories < 100);
+// const highCalorieFruit = fruit.filter(fruit => fruit.calories >= 100);
+// console.log(yellowFruit);
+// console.log(lessCalorieFruit);
+// console.log(highCalorieFruit);
+// const fruitName = fruit.map(fruit => fruit.name);
+// const fruitColor = fruit.map(fruit => fruit.color);
+// const fruitCalories = fruit.map(fruit => fruit.calories);
+// console.log(fruitName);
+// console.log(fruitColor);
+// console.log(fruitCalories);
+// fruit.forEach(fruit => console.log(fruit.calories)); 
+// fruit.shift();
+// fruit.unshift();
+// fruit.shift({name : "grapes",color: "green",calories : 100});
+// fruit.pop();
+// fruit.push({name : "grapes",color: "green",calories : 100});
+// console.log(fruit);
+// console.log(fruit);
+
+
+//--------------- 46. Nested Objrct  --------------------------------------------------------------
+
+// class Person{
+//     constructor(name,age,...address){
+//         this.name = name;
+//         this.age = age;
+//         this.address = new Address(...address)
+//     }
+// }
+// class Address {
+//     constructor(state,city,pin) {
+//         this.state = state;
+//         this.city = city;
+//         this.pin = pin;
+//     }
+// }
+
+// const person1 = new Person("Vrushabh",24,"Gujarat","ahmedabad",382418);
+// const person2 = new Person("Bhavik",24,"Gujarat","ahmedabad2",382418);
+// const person3 = new Person("Sagar",24,"Gujarat","ahmedabad3",382418);
+
+// console.log(person2.address);
+
+
+// const person = {
+//     fullname : "Vrushabh panchal",
+//     age : 24 ,
+//     isStudent : true ,
+//     hobbies : ["Music","Movies","Games"],
+//     address : {
+//         state : "Gujarat",
+//         city : "ahmedabad",
+//         pincode : 382418
+//     }
+// }
+
+// for(const prpoerty in person.address){
+//     console.log(person.address[prpoerty]);
+// }
+// console.log(person.address.city);
+// console.log(person.hobbies[2]);
+
+
+
+//--------------- 45. Destructuring  --------------------------------------------------------------
+
+//------------- Example5 ----------------------
+// DESTRUCTURE IN FUNCTION PARAMETERS
+
+// function displayPerson({firstName,lastName,age,job= "Unemployed"}){
+//     console.log(`Name : ${firstName} ${lastName}`);
+// console.log(`Age : ${age}`);
+// console.log(`Job : ${job}`);
+
+// }
+
+// const person1 = {
+//     firstName : "vrushabh",
+//     lastName : "panchal",
+//     age : 24,
+// }
+// const person2 = {
+//     firstName : "sagar",
+//     lastName : "khatri",
+//     age : 24,
+//     job : "Django dev"
+// }
+// displayPerson(person1);
+
+
+
+
+//------------- Example4 ----------------------
+// EXTRACT VALUES FROM OBJECT
+// const person1 = {
+//     firstName : "vrushabh",
+//     lastName : "panchal",
+//     age : 24,
+// }
+// const person2 = {
+//     firstName : "sagar",
+//     lastName : "khatri",
+//     age : 24,
+//     job : "Django dev"
+// }
+
+// const{firstName,lastName,age,job= "Unemployed"} = person2;
+
+// console.log(firstName);
+// console.log(lastName);
+// console.log(age);
+// console.log(job);
+
+//------------- Example3 ----------------------
+// ASSIGN ARRAY ELEMENT TO VARIABBLE
+
+// const color = ["red", "green", "blue", "black", "white"];
+
+// const[firstColor,secondColor,thirdColor,...extraColors] = color;
+
+
+// console.log(firstColor);
+// console.log(secondColor);
+// console.log(thirdColor);
+// console.log(thirdColor);
+// console.log(extraColors);
+
+
+//------------- Example2 ----------------------
+// SWAP THE ELEMENT IN ARRAY 
+
+// const color = ["red", "green", "blue", "black", "white"];
+
+// [color[0],color[4]] = [color[4],color[0]];
+
+// console.log(color);s
+
+
+//------------- Example1 ----------------------
+// SWAP THE VALUE OF TWO VARIABLE
+// let a = 1;
+// let b = 2;
+
+// [a,b] = [b,a];
+
+// console.log(a);
+// console.log(b);
+
+
+//--------------- 44. Getters Setters  --------------------------------------------------------------
+
+// class Person {
+
+//     constructor(firstName,lastName,age){
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.age = age;
+//     }
+//     set firstName(newFirstName){
+//         if(typeof newFirstName === "string" && newFirstName.length > 0){
+//             this._firstName = newFirstName;
+//         }
+//         else{
+//             console.error("First name must be a non-empty string");
+//         }
+//     }
+//     set lastName(newLastName){
+//         if(typeof newLastName === "string" && newLastName.length > 0){
+//             this._lastName = newLastName;
+//         }
+//         else{
+//             console.error("Last name must be a non-empty string");
+//         }
+//     }
+//     set age(newAge){
+//         if(typeof newAge === "number" && newAge >= 0){
+//             this._age = newAge;
+//         }
+//         else{
+//             console.error("Age must be a non-nagative number");
+//         }
+//     }
+//     get firstName(){
+//         return this._firstName;
+//     }
+//     get lastName(){
+//         return this._lastName;
+//     }
+//     get age(){
+//         return this._age;
+//     }
+//     get fullName(){
+//         return `My Full Name is ${(this._firstName +" " +this._lastName)} and my age is ${this._age}`;
+//     }
+
+// }
+
+// const person = new Person("Vrushabh","Panchal",24);
+
+// console.log(person.firstName);
+// console.log(person.lastName);
+// console.log(person.age);
+// console.log(person.fullName);
+
+
+// class Rectangle {
+
+//     constructor(width,height) {
+//         this.width = width;
+//         this.height = height;
+//     }
+//     set width(newWidth){
+//         if(newWidth > 0){
+//             this._width = newWidth;
+//         }
+//         else{
+//             return console.error("Width must be an positive number")
+//         }
+//     }
+//     set height(newHeight){
+//         if(newHeight > 0){
+//             this._height = newHeight;
+//         }
+//         else{
+//             return console.error("height must be an positive number")
+//         }
+//     }
+
+//     get width (){
+//         return `${this._width.toFixed(1)} cm`;
+//     }
+//     get height (){
+//         return `${this._height.toFixed(1)} cm`
+//     }
+//     get area(){
+//         return `${(this._width * this._height).toFixed(1)} cm^2`;
+//     }
+
+// }
+
+// const ractangle = new Rectangle(52,20);
+// console.log(ractangle.width);
+// console.log(ractangle.height);
+// console.log(ractangle.area);
+
+
+
+//--------------- 43. Super Keyword  --------------------------------------------------------------
+
+// class Animal {
+//     constructor(name,age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+
+//     move(speed){
+//         console.log(`the ${this.name} moves at a speed ${speed} km/h`);
+//     }
+// }
+
+// class Rabit extends Animal {
+//     constructor(name,age,runSpeed) {
+//      super(name,age);   
+//      this.runSpeed = runSpeed;
+//     }
+//     run(){
+//         console.log(`The ${this.name} can run`);
+//         super.move(this.runSpeed);
+//     }
+// }
+// class Fish extends Animal {
+//     constructor(name,age,swimSpeed) {
+//         super(name,age);   
+//         this.swimSpeed = swimSpeed;
+//     }
+//     swim(){
+//         console.log(`The ${this.name} can swim`);
+//         super.move(this.swimSpeed);
+//     }
+// }
+// class Hawk extends Animal {
+//     constructor(name,age,flySpeed) {
+//         super(name,age);   
+//         this.flySpeed = flySpeed;
+//     }
+//     fly(){
+//         console.log(`The ${this.name} can fly`);
+//         super.move(this.flySpeed);
+//     }
+// }
+
+// const rabir = new Rabit("rabbit",2,20); 
+// const fish = new Fish("fish",1,30); 
+// const hawk = new Hawk("hawk",3,40); 
+
+// console.log(rabir.age);
+// console.log(rabir.name);
+// console.log(rabir.runSpeed);
+
+// fish.swim();
+
+//--------------- 42. Inheritance  --------------------------------------------------------------
+
+// class Animnal {
+//     alive = true;
+
+//     eat(){
+//         console.log(`This ${this.name} is eating`);
+//     }
+//     sleep(){
+//         console.log(`This ${this.name} is sleeping`);
+//     }
+// }
+
+// class Dog extends Animnal {
+//     name = "Dog";
+//     run(){
+//         console.log(`The ${this.name} can run slower the cat`)
+//     }
+// }
+
+// class Cat extends Animnal {
+//     name = "Cat";
+//     fastRun(){
+//         console.log(`The ${this.name} can run faster the cat`)
+//     }
+// }
+
+// const dog = new Dog();
+// const cat = new Cat();
+
+// console.log(cat.alive); 
+// cat.alive = false
+// console.log(cat.alive);
+
+// dog.eat();
+// dog.run();
+// cat.eat();
+// cat.fastRun();
+
+//--------------- 41. Static  --------------------------------------------------------------
+
+// class User {
+
+//     static userCount = 0;
+
+//     constructor(username){
+//         this.username = username;
+//         User.userCount++;
+//     }
+
+//     sayHello(){
+//         console.log(`Hello my name is ${this.username}`);
+//     }
+
+//     static getUserCount(){
+//         console.log(`There are ${User.userCount} is online`);
+//     }
+
+// }
+
+// const user1 = new User("vrushabh");
+// const user2 = new User("Bhavik");
+// const user3 = new User("Sagar");
+
+// console.log(user1.username);
+// console.log(user2.username);
+// console.log(user3.username);
+
+// user1.sayHello();
+// user2.sayHello();
+// user3.sayHello();
+
+// User.getUserCount();
+
+// console.log(user1.userCount);
+// console.log(User.userCount);
+
+
+
+
+// class MathUtils {
+
+//     static PI = 3.14159;
+
+//     static getRadious(radius) {
+//         return radius * 2;
+//     }
+
+//     static getCircumFerence(radius){
+//         return  2 * this.PI * radius;
+//     }
+
+//     static getArea(radius) {
+//         return this.PI * radius * radius;
+//     }
+// }
+
+// console.log(MathUtils.PI);
+// console.log(MathUtils.getRadious(10));
+// console.log(MathUtils.getCircumFerence(10));
+// console.log(MathUtils.getArea(10));
+
+//--------------- 40. Class  --------------------------------------------------------------
+
+// class Product {
+//     constructor(name,price){
+//         this.name = name;
+//         this.price = price;
+//     }
+
+//     displayProduct(){
+//         console.log(`Product Name : ${this.name}`);
+//         console.log(`Product Price : ${this.price}`);
+//     }
+
+//     calculateTax(salesTax){
+//         return this.price + (this.price * salesTax);
+//     }
+// }
+
+// const product1 = new Product("shirts", 100.10);
+// const product2 = new Product("pants", 180.30);
+// const product3 = new Product("jacket", 200.60);
+// const tax = 0.18;
+
+// product1.displayProduct();
+// product2.displayProduct();
+// product3.displayProduct();
+
+
+// const total = product2.calculateTax(tax);
+// console.log(total);
+
+
+//--------------- 39. Constructor  --------------------------------------------------------------
+
+// function Car(brand, model, year, color){
+//     this.brand = brand,
+//     this.model = model,
+//     this.year = year,
+//     this.color = color,
+//      this.drive = function (){console.log(`you drive ${this.model} ${this.brand}`);
+//      }
+// }
+
+// const car1 = new Car("Ford","mustang",2024,"black");
+// const car2 = new Car("Toyota","Fourtuner",2024,"black");
+// const car3 = new Car("TATA","harrier",2024,"black");
+
+// console.log(car2);
+// car2.drive();
+
+
+
+//--------------- 38. This keyword  --------------------------------------------------------------
+
+// const person1 = {
+//     firstName : "Sagar",
+//     lastName : "Khatri",
+//     age : 24,
+//     isEmployed : true,
+//     sayHii : function () {console.log(`Hi my name is ${this.firstName} ${this.lastName}`);},
+//     eating : function (){console.log("I would love to eat the pizza");
+//     }
+// }
+
+// person1.sayHii();
+
+//--------------- 37. Objects  --------------------------------------------------------------
+// const person1 = {
+//     firstName : "Sagar",
+//     lastName : "Khatri",
+//     age : 24,
+//     isEmployed : true,
+//     sayHii : function () {console.log("hii I am saagr khatri");},
+//     eating : function (){console.log("I would love to eat the pizza");
+//     }
+// }
+// const person2 = {
+//     firstName : "Bhavik",
+//     lastName : "Panchal",
+//     age : 24,
+//     isEmployed : true,
+//     sayHii : () => console.log("hii I am Bhavik Panchal"),
+//     eating :  () => console.log("I would love to eat the pizza")
+// }
+
+// console.log(person1.age);
+// console.log(person2.age);
+// person1.sayHii();
+// person2.sayHii();
+// console.log(person2.sayHii);
+
+
+//--------------- 36. Arrow Function  --------------------------------------------------------------
+
+// const number = [1, 24, 3, 24, 51, 10, 25, 65, 41];
+
+// const square = number.map( (element) => Math.pow(element,2));
+// const cube = number.map( (element) => Math.pow(element,3));
+// const evenNum = number.filter( (element)=> element % 2 === 0);
+// const oddNum = number.filter( (element)=> element % 2 !== 0);
+// const total = number.reduce( (accumulator,element)=> accumulator + element);
+
+// console.log("Square " + square);
+// console.log("Cube " + square);
+// console.log("Even " + evenNum);
+// console.log("Odd " + oddNum);
+// console.log("Total " + total);
+
+
+//--------------- 35. Function Expressions  --------------------------------------------------------------
+
+// const number = [1, 2, 3, 4, 40, 20, 30, 50];
+
+// //================== this is the function decoration ============================
+// // const squaredNumber = number.map(square);
+// //================== this is the function Expressions ============================
+// const squaredNumber = number.map(function(element){
+//     return Math.pow(element,2);
+// });
+
+// const cubedNumber = number.map(function(element){
+//     return Math.pow(element,3);
+// });
+// const evenNumber = number.filter(function(element){
+//     return element % 2 === 0;
+// });
+// const oddNumber = number.filter(function(element){
+//     return element % 2 !== 0;
+// });
+// const total = number.reduce(function(accumulator,element){
+//     return accumulator + element;
+// });
+
+// console.log(squaredNumber);
+// console.log(cubedNumber);
+// console.log(evenNumber);
+// console.log(oddNumber);
+// console.log(oddNumber);
+// console.log("$"+total.toFixed(2));
+
+
+// function square(element){
+// return Math.pow(element,2);
+// }
+
+// function hello(){
+//     console.log("hello");
+// }
+
+// setTimeout(
+//     function(){
+//         console.log("hello from set timout");
+// },3000);
+
+// hello();
+
+
+
+//--------------- 34. Reduce  --------------------------------------------------------------
+
+// const grade = [12, 13, 20, 50, 40, 60];
+
+// const maximum = grade.reduce(getMax);
+// const minimum = grade.reduce(getMin);
+
+// console.log(maximum);
+// console.log(minimum);
+
+
+// function getMax(accumulator,element){
+//     return Math.max(accumulator,element);
+// }
+// function getMin(accumulator,element){
+//     return Math.min(accumulator,element);
+// }
+
+// const amount = [1, 12, 50, 10, 70];
+
+// const sumAmount =  amount.reduce(sum);
+
+// console.log(`$${sumAmount.toFixed(2)}`);
+
+
+// function sum(accumulator,element){
+//     return accumulator + element;
+// }
+
+
+//--------------- 33. Filter  --------------------------------------------------------------
+
+// const fruits = ["apple","banana","coconut","kiwi","pomograet","orange"];
+
+// const longWords = fruits.filter(longWord);
+
+// console.log(longWords);
+
+
+// function longWord(element){
+//     return element.length > 6;
+// }
+
+// const ages = [11, 12, 13, 15, 18, 20, 21, 22, 16, 30];
+
+// const adults = ages.filter(isAdults);
+// const childrens = ages.filter(isChild);
+
+// console.log(adults);
+// console.log(childrens);
+
+// function isAdults(element){
+//     return element >= 18;
+// }
+
+// function isChild(element){
+//     return element < 18;
+// }
+
+//  let number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//  let evenNumber = number.filter(isEven);
+//  let oddNumber = number.filter(isOdd);
+
+//  console.log(evenNumber);
+//  console.log(oddNumber);
+ 
+
+//  function isEven(element){
+//     return element % 2 === 0;
+//  }
+//  function isOdd(element){
+//     return element % 2 !== 0;
+//  }
+
+
+
+
+//--------------- 32. Map  --------------------------------------------------------------
+
+// const dates = ["2024-12-21","2024-11-22","2024-10-23"];
+// const formattedDate = dates.map(formatDates);
+
+// console.log(formattedDate);
+
+// function formatDates(element){
+//     const parts = element.split("-");
+//     return `${parts[2]}/${parts[1]}/${parts[0]}`;
+// }
+
+
+
+// const students = ["sagar","bhavik","vrushabh"];
+// const studentUpper = students.map(upperCase);
+// const studentLower = students.map(lowerCase);
+
+// console.log(studentUpper);
+
+
+// function upperCase(element){
+//     return element.toUpperCase();
+// }
+// function lowerCase(element){
+//     return element.toLowerCase();
+// }
+
+// let number = [1, 2, 3, 4, 5];
+// let squaredNumber = number.map(square);
+// let cubedNumber = number.map(cube);
+
+// console.log(cubedNumber);
+
+
+// function square(element){
+//     return Math.pow(element, 2);
+// }
+// function cube(element){
+//     return Math.pow(element, 3);
+// }
+
+
+//--------------- 31. forEach  --------------------------------------------------------------
+
+
+// let fruits = ["apple","banana","coconut","orange",];
+
+// fruits.forEach(capitalize);
+// fruits.forEach(displayNumber);
+
+// function lowerCase(element,index,arr){
+//     arr[index] = element.toLowerCase();
+// }
+// function upperCase(element,index,arr){
+//     arr[index] = element.toUpperCase();
+// }
+
+// function capitalize(element,index,arr) {
+//     arr[index] = element.charAt(0).toUpperCase() + element.slice(1);
+// }
+
+
+
+   
+// let number = [1, 2, 3, 4, 5];
+// number.forEach(cube);
+// number.forEach(displayNumber);
+
+// function double(element, index, arr){
+//     arr[index] = element * 2;
+//     // console.log(element);
+// }
+// function square(element, index, arr){
+//     arr[index] = Math.pow(element, 2 );
+//     // console.log(element);
+// }
+// function cube(element, index, arr){
+//     arr[index] = Math.pow(element, 3);
+//     // console.log(element);
+// }
+
+// function displayNumber(element){
+//     console.log(element);
+// } 
+
+//--------------- 30. Callback  --------------------------------------------------------------
+
+// function hello(Callback , x , y){
+//     document.getElementById("myH3").innerHTML = Callback(x,y)
+//     return Callback(x,y);
+// }
+
+// function add(a,b){
+//     return a + b;
+// }
+
+// console.log("Sum is " +  hello(add,10,20));
+
+//--------------- 29. Random Password generator  --------------------------------------------------------------
+
+// function generatePassword(passLength,includeLowerCase,includeUpperCase,includeNumbers,includeSymbol){
+
+//     const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+//     const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//     const numbers = "0123456789";
+//     const symbolChars = "!@#$%^&*_+-=";
+//     let allowChars = "";
+//     let password = "";
+
+//     allowChars += includeLowerCase ? lowercaseChars : "";
+//     allowChars += includeUpperCase ? uppercaseChars : "";
+//     allowChars += includeNumbers ? numbers : "";
+//     allowChars += includeSymbol ? symbolChars : "";
+
+//     console.log(passLength);
+//     // console.log(allowChars);
+//     if(passLength <= 0){
+//         return "please enter at least 1 number of password";
+//     }
+//      if(allowChars.length === 0){
+//         return "please select at least 1 char option";
+//     }
+//     for (let i = 0; i < passLength; i++) {
+//        const randomIndex = Math.floor(Math.random() * allowChars.length);
+//        password += allowChars[randomIndex];
+//        console.log(password);
+       
+//     }
+//     return password;
+// }
+
+
+// let passLength = 12;
+// let lowercaseChars = true;
+// let uppercaseChars = true;
+// let numChars = false;
+// let symChars = false;
+
+// let passwords = generatePassword(passLength,lowercaseChars,uppercaseChars,numChars,symChars);
+
+// console.log("This is the password "+passwords);
+
+
+
+
+
+// function generatePassword(length,includeLowerCase,includeUpperCase,includeNumbers,includeSpecial){
+
+//     const lowercaseChars = "abcdefghijklmnopqrstuvwxyz"
+//     const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+//     const numbers = "0123456789";
+//     const symbolChars = "*&^%$#@!_+-=";
+
+//     let allowChars = "";
+//     let password = "";
+
+//     allowChars += includeLowerCase ? lowercaseChars : "";
+//     allowChars += includeUpperCase ? uppercaseChars : "";
+//     allowChars += includeNumbers ? numbers : "";
+//     allowChars += includeSpecial ? symbolChars : "";
+
+//     console.log(allowChars);
+//     if(length <= 0){
+//         return`(Password length must be at least 1)`
+//     }
+//     if(allowChars.length === 0){
+//         return`(At least 1 set of charactor needs to be selected)`
+//     }
+//     for (let i = 0; i < length; i++) {
+//         const rendomIndex = Math.floor(Math.random() * allowChars.length);
+//         password += allowChars[rendomIndex];
+        
+//     }
+//     console.log(length);
+    
+//     return password;
+
+// }
+
+// const passLength = 12; 
+// const includeLowerCase = true; 
+// const includeUpperCase = true; 
+// const includeNumbers = true; 
+// const includeSpecial = false;
+
+// const password = generatePassword(passLength,includeLowerCase,includeUpperCase,includeNumbers,includeSpecial);
+// console.log(password);
+
+
+//--------------- 28. Dice Roller program  --------------------------------------------------------------
+
+// function rollDice() {
+
+//     const numOfDice = document.getElementById("numOfDice").value;
+// const diceResult = document.getElementById("diceResult");
+// const diceImage = document.getElementById("diceImage");
+// const values = [];
+// const image = [];
+
+// for (let i = 0; i < numOfDice; i++) {
+//     const value = Math.floor(Math.random() * 6) + 1;
+//     // console.log(value);
+//    values.push(value);
+//    image.push(`<img src = "image/${value}.png" alt = "Dice ${value}">`);
+// } 
+// diceResult.textContent = `dice ${values.join(", ")}`;
+// diceImage.innerHTML = image.join("");
+// }
+
+
+
+//--------------- 27. Rest oprator  --------------------------------------------------------------
 
 
 // function sum(...number){
@@ -95,31 +1049,31 @@
 
 //--------------- 24. Temprature converter  --------------------------------------------------------------
 
-let inputTemp = document.getElementById("inputTemp");
-let toFehrenhite = document.getElementById("toFehrenhite");
-let toCelsius = document.getElementById("toCelsius");
-let result = document.getElementById("result");
-let temp;
+// let inputTemp = document.getElementById("inputTemp");
+// let toFehrenhite = document.getElementById("toFehrenhite");
+// let toCelsius = document.getElementById("toCelsius");
+// let result = document.getElementById("result");
+// let temp;
 
-function convert(){
-    event.preventDefault();
-    if(toFehrenhite.checked){
-        temp = Number(inputTemp.value);
-        temp = temp * 9/5 + 32;
-        // result.textContent = "You selected C to F";
-        result.textContent = temp.toFixed(1) + "F";
-    }
-    else if(toCelsius.checked){
-        temp = Number(inputTemp.value);
-        temp = (temp - 32) * (5/9);
-        // result.textContent = "You selected F to C";
-        result.textContent = temp.toFixed(1) + "C";
-    }
-    else{
-        result.textContent = "Select Unit";
-    }
+// function convert(){
+//     event.preventDefault();
+//     if(toFehrenhite.checked){
+//         temp = Number(inputTemp.value);
+//         temp = temp * 9/5 + 32;
+//         // result.textContent = "You selected C to F";
+//         result.textContent = temp.toFixed(1) + "F";
+//     }
+//     else if(toCelsius.checked){
+//         temp = Number(inputTemp.value);
+//         temp = (temp - 32) * (5/9);
+//         // result.textContent = "You selected F to C";
+//         result.textContent = temp.toFixed(1) + "C";
+//     }
+//     else{
+//         result.textContent = "Select Unit";
+//     }
 
-}
+// }
 
 
 
