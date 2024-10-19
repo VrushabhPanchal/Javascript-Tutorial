@@ -1,22 +1,126 @@
-//--------------- 50. Dates --------------------------------------------------------------
+//--------------- 53. Clock project --------------------------------------------------------------
 
-const date = new Date();
-const date1 = new Date("2023-12-31");
-const date2 = new Date("2024-01-01");
+function updateClock(){
 
-if(date2 > date1){
-    console.log("HAPPY NEW YEAR");
+    const now = new Date();
+    let hours = now.getHours();
+    const meridiem = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12 || 12 ;
+    hours = hours.toString().padStart(2,0);
+    const minutes = now.getMinutes().toString().padStart(2,0);
+    const seconds = now.getSeconds().toString().padStart(2,0);
+    const timeString = `${hours}:${minutes}:${seconds} ${meridiem}`;
+    document.getElementById("clock").textContent = timeString;
+
 }
 
+updateClock();
+setInterval(updateClock,1000);
+//--------------- 52. setTimeOut --------------------------------------------------------------
 
-date.setFullYear(2024);
-date.setMonth(0);
-date.setDate(1);
-date.setHours(4);
-date.setMinutes(3);
-date.setSeconds(4);
+// let timeoutId;
 
-console.log(date);
+// function startTimer(){
+//     timeoutId=  setTimeout(()=> window.alert("hello") , 3000);
+//     console.log("STARTED")
+// }
+// function clearTimer(){
+//     clearTimeout(timeoutId)
+//     console.log("CLEARED")
+// }
+
+// function sayHello(){
+//     window.alert("hello")
+// }
+// setTimeout(sayHello,3000)
+// setTimeout(function(){window.alert("hellow ")},3000);
+// setTimeout(()=> window.alert("hello"),3000);
+
+
+
+//--------------- 51. Closure --------------------------------------------------------------
+
+
+// function createGame(){
+//     let score = 0;
+
+//     function incrementScore(points){
+//         score += points;
+//         console.log(`+${points}pts`);
+//     }
+//     function decrementScore(points){
+//         score -= points;
+//         console.log(`-${points}pts`);
+//     }
+    
+//     function getSecore(){
+//         return score;
+//     }
+  
+//     return {incrementScore,decrementScore,getSecore}
+// }
+
+// const game = createGame();
+  
+// game.decrementScore(2);
+// game.incrementScore(5);
+// console.log(`the final score is ${game.getSecore()} pts`);
+
+
+
+// function createCounter(){
+//     let count = 0 ;
+
+//     function getCount(){
+//         return count;
+//     }
+
+//     function incerement(){
+//         count++;
+//         console.log(`Count increased to ${count}`);   
+//     }
+//     return {incerement,getCount};
+// }
+
+// const counter = createCounter();
+// counter.incerement();
+// counter.incerement();
+// counter.incerement();
+// counter.incerement();
+
+// console.log(`The current count is ${counter.getCount()}`);
+
+// function outer(){
+//     let message = "Hello";
+
+//     function inner(){
+//         console.log(message);
+//     }
+//     inner();
+// }
+
+// outer();
+
+
+//--------------- 50. Dates --------------------------------------------------------------
+
+// const date = new Date();
+// const date1 = new Date("2023-12-31");
+// const date2 = new Date("2024-01-01");
+
+// if(date2 > date1){
+//     console.log("HAPPY NEW YEAR");
+// }
+
+
+// date.setFullYear(2024);
+// date.setMonth(0);
+// date.setDate(1);
+// date.setHours(4);
+// date.setMinutes(3);
+// date.setSeconds(4);
+
+// console.log(date);
 
 
 // const date = new Date();
