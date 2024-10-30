@@ -1,48 +1,64 @@
+//--------------- 55. ES6 modules --------------------------------------------------------------
+
+import {PI,getCircumference,getArea,getVolume} from './mathutils.js';
+
+console.log(PI);
+const circumferance = getCircumference(10);
+const area = getArea(10);
+const volume = getVolume(10);
+console.log(`${circumferance.toFixed(2)} cm`);
+console.log(`${area.toFixed(2)} cm^2`);
+console.log(`${volume.toFixed(2)} cm^3`);
+
+
+
+
+
 //--------------- 54. Stopwatch program --------------------------------------------------------------
-const display = document.getElementById("display");
-let timer = null;
-let startTime = 0;
-let elapsedTime = 0;
-let isRunning = false;
+// const display = document.getElementById("display");
+// let timer = null;
+// let startTime = 0;
+// let elapsedTime = 0;
+// let isRunning = false;
 
-function start(){
-    if(!isRunning){
-        startTime = Date.now() - elapsedTime;
-        timer = setInterval(update,10);
-        isRunning = true;
-    }
-}
-function stop(){
+// function start(){
+//     if(!isRunning){
+//         startTime = Date.now() - elapsedTime;
+//         timer = setInterval(update,10);
+//         isRunning = true;
+//     }
+// }
+// function stop(){
 
-    if(isRunning){
-        clearInterval(timer);
-        elapsedTime = Date.now() - startTime;
-        isRunning = false;
-    }
+//     if(isRunning){
+//         clearInterval(timer);
+//         elapsedTime = Date.now() - startTime;
+//         isRunning = false;
+//     }
 
-}
-function reset(){
-    clearInterval(timer);
- startTime = 0;
- elapsedTime = 0;
- isRunning = false;
- display.textContent = "00:00:00:00"
-}
-function update(){
-    const currentTime = Date.now();
-    elapsedTime = currentTime - startTime;
-    let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
-    let minutes = Math.floor(elapsedTime / (1000 * 60) % 60);
-    let seconds = Math.floor(elapsedTime / 1000 % 60);
-    let miliseconds = Math.floor(elapsedTime % 1000 / 10);
+// }
+// function reset(){
+//     clearInterval(timer);
+//  startTime = 0;
+//  elapsedTime = 0;
+//  isRunning = false;
+//  display.textContent = "00:00:00:00"
+// }
+// function update(){
+//     const currentTime = Date.now();
+//     elapsedTime = currentTime - startTime;
+//     let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+//     let minutes = Math.floor(elapsedTime / (1000 * 60) % 60);
+//     let seconds = Math.floor(elapsedTime / 1000 % 60);
+//     let miliseconds = Math.floor(elapsedTime % 1000 / 10);
 
-    hours = String(hours).padStart(2,"0");
-    minutes = String(minutes).padStart(2,"0");
-    seconds = String(seconds).padStart(2,"0");
-    miliseconds = String(miliseconds).padStart(2,"0");
+//     hours = String(hours).padStart(2,"0");
+//     minutes = String(minutes).padStart(2,"0");
+//     seconds = String(seconds).padStart(2,"0");
+//     miliseconds = String(miliseconds).padStart(2,"0");
 
-    display.textContent = `${hours}:${minutes}:${seconds}:${miliseconds}`;
-}
+//     display.textContent = `${hours}:${minutes}:${seconds}:${miliseconds}`;
+// }
 //--------------- 53. Clock project --------------------------------------------------------------
 
 // function updateClock(){
