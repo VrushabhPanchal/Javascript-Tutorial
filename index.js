@@ -1,17 +1,72 @@
+//--------------- 57. Error handling --------------------------------------------------------------
+
+try {
+
+    const divident = Number(window.prompt("Enter the divident : "));
+    const divisor = Number(window.prompt("Enter the divisor :  "));
+    
+    if(divisor == 0){
+        throw new Error("You can't be divide by zero");
+    }
+    if(isNaN(divident) || isNaN(divisor)){
+        throw new Error("Values must be an number");
+    }
+
+
+    const result = divident / divisor ;
+    console.log("The result is : " + result);
+
+} catch (error) {
+    console.error(error);
+}
+console.log("You have reached the end!");
+
+// try {
+//     console.log(e);
+    
+//     // console.log("hello");
+    
+// } catch (error) {
+//     console.error(error);
+// }
+// console.log("You have reached the end!");
+
+
+//--------------- 56. Asynchronous code --------------------------------------------------------------
+
+// setTimeout(() => {
+//     console.log("Task 1"); 
+// }, 3000);
+// console.log("Task 2");
+// console.log("Task 3");
+// console.log("Task 4");
+
+// function func1(callback){
+//     setTimeout(()=> {
+//         console.log("Task 1");
+//         callback();
+//     } , 2000);
+// }
+// function func2(){
+//     console.log("Task 2");
+//     console.log("Task 3");
+//     console.log("Task 4");
+    
+// }
+
+// func1(func2);
+
 //--------------- 55. ES6 modules --------------------------------------------------------------
 
-import {PI,getCircumference,getArea,getVolume} from './mathutils.js';
+// import {PI,getCircumference,getArea,getVolume} from './mathutils.js';
 
-console.log(PI);
-const circumferance = getCircumference(10);
-const area = getArea(10);
-const volume = getVolume(10);
-console.log(`${circumferance.toFixed(2)} cm`);
-console.log(`${area.toFixed(2)} cm^2`);
-console.log(`${volume.toFixed(2)} cm^3`);
-
-
-
+// console.log(PI);
+// const circumferance = getCircumference(10);
+// const area = getArea(10);
+// const volume = getVolume(10);
+// console.log(`${circumferance.toFixed(2)} cm`);
+// console.log(`${area.toFixed(2)} cm^2`);
+// console.log(`${volume.toFixed(2)} cm^3`);
 
 
 //--------------- 54. Stopwatch program --------------------------------------------------------------
