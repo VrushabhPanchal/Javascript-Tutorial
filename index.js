@@ -1,25 +1,52 @@
+//--------------- 59. DOM --------------------------------------------------------------
+
+const username = "Bro code";
+const welcomeMsg = document.getElementById("welcome-msg");
+
+welcomeMsg.textContent += username === " " ? "Guest" : username  
+ console.dir(document);
+//--------------- 58. calculator --------------------------------------------------------------
+
+// const display = document.getElementById("display");
+
+// function appendToDisplay(input){
+//     console.log(`this is the input ${input}`);
+//     display.value += input;
+// }
+// function clearDisplay(){
+//     display.value = "";
+// }
+// function calculate(){
+//     try {
+//         display.value = eval(display.value);
+//     } catch (error) {
+//         display.value = "error";
+//     }
+// }
+
+
 //--------------- 57. Error handling --------------------------------------------------------------
 
-try {
+// try {
 
-    const divident = Number(window.prompt("Enter the divident : "));
-    const divisor = Number(window.prompt("Enter the divisor :  "));
+//     const divident = Number(window.prompt("Enter the divident : "));
+//     const divisor = Number(window.prompt("Enter the divisor :  "));
     
-    if(divisor == 0){
-        throw new Error("You can't be divide by zero");
-    }
-    if(isNaN(divident) || isNaN(divisor)){
-        throw new Error("Values must be an number");
-    }
+//     if(divisor == 0){
+//         throw new Error("You can't be divide by zero");
+//     }
+//     if(isNaN(divident) || isNaN(divisor)){
+//         throw new Error("Values must be an number");
+//     }
 
 
-    const result = divident / divisor ;
-    console.log("The result is : " + result);
+//     const result = divident / divisor ;
+//     console.log("The result is : " + result);
 
-} catch (error) {
-    console.error(error);
-}
-console.log("You have reached the end!");
+// } catch (error) {
+//     console.error(error);
+// }
+// console.log("You have reached the end!");
 
 // try {
 //     console.log(e);
