@@ -1,12 +1,81 @@
+//--------------- 60. Element selector --------------------------------------------------------------
+
+// const myHeading = document.getElementById("my-heading");
+// myHeading.style.backgroundColor ="yellow";
+// myHeading.style.textAlign ="center";
+
+
+// const foods = document.querySelectorAll("li");
+
+// foods.forEach(
+//     food => {
+//         food.style.backgroundColor = "yellow"; 
+//     }
+// );
+
+// fruit[0].style.backgroundColor = "red";
+
+// console.log(foods);
+
+
+// const element = document.querySelector("h4");
+// console.log(element);
+
+
+// const h4Elements = document.getElementsByTagName("h4")
+// const liElements = document.getElementsByTagName("li")
+
+// Array.from(h4Elements).forEach(
+//     fruit => {
+//         fruit.style.backgroundColor = "red";
+//     }
+// );
+
+//  Array.from(liElements).forEach(
+//     liElement => {
+//         liElement.style.backgroundColor = "blue";
+//         liElement.style.color = "red";
+//     }
+//  );
+
+// for(let h4Element of h4Elements){
+//     h4Element.style.backgroundColor = "yellow";
+// }
+// for(let liElement of liElements){
+//     liElement.style.backgroundColor = "lightgreen";
+// }
+
+
+
+// const fruits = document.getElementsByClassName("fruits");
+// Array.from(fruits).forEach(
+//     fruit => {
+//         fruit.style.backgroundColor = "red";
+//     }
+// );
+
+// for(let fruit of fruits){
+//     fruit.style.backgroundColor = "red";
+// }
+
+// fruits[0].style.background = "red";
+
+
+// console.log(h4Elements);
+
+
+
 //--------------- 59. DOM --------------------------------------------------------------
 
-const username = "Bro code";
-const welcomeMsg = document.getElementById("welcome-msg");
+// const username = "Bro code";
+// const welcomeMsg = document.getElementById("welcome-msg");
 
-welcomeMsg.textContent += username === " " ? "Guest" : username  
- console.dir(document);
+// welcomeMsg.textContent += username === " " ? "Guest" : username  
+//  console.dir(document);
+
+
+
 //--------------- 58. calculator --------------------------------------------------------------
-
 // const display = document.getElementById("display");
 
 // function appendToDisplay(input){
